@@ -59,9 +59,13 @@ public class LoginController extends HttpServlet {
 			
 		}
 		if (request.getParameter("aceptar2") != null)
-		{}
+		{
+			GestorUsuario us= new GestorUsuario();
+			us.insertUser(nombre, edad, usuarioReg, passReg);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}}
 		
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
